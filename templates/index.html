@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Miniblog</title>
-    </head>
-    <body>
-        <h1>Miniblog</h1>
-        {% for post in posts %}
-            <h1>{{ post.title }}</h1>
-            <p>By {{ post.author }} on {{ date_posted }}</p>
-            <p>{{ post.content }}</p>
-        {% endfor %}
-    </body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Miniblog</h1>
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+{% endblock content %}
