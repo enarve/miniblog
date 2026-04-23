@@ -1,7 +1,8 @@
 body {
   background: #ffffff;
-  color: #333333;
-  margin-top: 5rem;
+  color: #000000;
+  margin: 10px 32px;
+  font-family: serif;
 }
 
 .flex {
@@ -15,10 +16,11 @@ body {
 
 main {
     flex-grow: 6;
+    max-width: 860px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #000000;
 }
 
 .bg-steel {
@@ -50,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a.article-title:hover {
-  color: #428bca;
+  color: darkred;
   text-decoration: none;
 }
 
@@ -90,4 +92,11 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+/* Media */
+@media screen and (width <= 768px) {
+    body {
+        margin: 10px 16px;
+    }
 }
