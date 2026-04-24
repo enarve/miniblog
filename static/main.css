@@ -1,3 +1,8 @@
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
+
 body {
   background: #ffffff;
   color: #000000;
@@ -15,9 +20,6 @@ main {
 .contents {
     margin: 0 auto;
     background-color: red;
-}
-
-.sidebar {
 }
 
 article {
