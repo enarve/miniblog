@@ -27,8 +27,13 @@
                 </div>
 
                 <div class="right-bar">
-                  <a href="{{ url_for('login') }}">Login</a>
-                  <a href="{{ url_for('register') }}">Register</a>
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
+                        <a href="{{ url_for('login') }}">Login</a>
+                        <a href="{{ url_for('register') }}">Register</a>
+                    {% endif %}
+                  
                 </div>
               </div>
             </div>
