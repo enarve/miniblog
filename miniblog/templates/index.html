@@ -3,11 +3,12 @@
     <h1>Miniblog</h1>
     {% for post in posts %}
     <article>
+        <img class="rounded-circle article-img" src="{{ url_for('static', filename = 'profile_pics/' + post.author.image_file) }}" height="60px">
         <div class="article-info">
-          <a href="#">{{ post.author }}</a>
-          <small class="text-muted">{{ post.date_posted }}</small>
+          <a href="">{{ post.author.username }}</a>
+          <small class="text-muted">{{ post.date_posted.strftime('%d-%m-%Y') }}</small>
         </div>
-        <h2><a href="#">{{ post.title }}</a></h2>
+        <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
         <p>{{ post.content }}</p>
     </article>
     {% endfor %}
