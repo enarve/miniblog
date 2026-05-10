@@ -5,24 +5,9 @@
         <form method="POST" action = "">
             {{ form.hidden_tag() }}
             <fieldset class="">
-                <legend class="">Log In</legend>
+                <legend class="">Reset Password</legend>
                 <div class="">
                     {{ form.username.label }}
-                    
-                    {% if form.username.errors %}
-                        {{ form.username }}
-                        <div>
-                            {% for error in form.username.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.username }}
-                    {% endif %}
-                </div>
-                
-                <div class="">
-                    {{ form.password.label }}
                     
                     {% if form.password.errors %}
                         {{ form.password }}
@@ -34,23 +19,26 @@
                     {% else %}
                         {{ form.password }}
                     {% endif %}
+                </div>
+                <div class="">
+                    {{ form.confirm_password.label }}
                     
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password }}
+                        <div>
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password }}
+                    {% endif %}
                 </div>
-                <div>
-                    {{ form.remember }}
-                    {{ form.remember.label }}
-                </div>
+                
             </fieldset>
             <div class="">
                 {{ form.submit }}
-                <small class="text-muted"> <a href="{{ url_for('reset_request') }}">Forgot password?</a> </small>
             </div>
-            
         </form>
-    </div>
-    <div class="">
-        <small class="text-muted">
-            Need an account? <a href="{{ url_for('register') }}">Sign up</a>
-        </small>
     </div>
 {% endblock content %}
